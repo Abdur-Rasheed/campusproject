@@ -1,5 +1,6 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
+import 'tachyons'
+import './Student.css'
 
 
 /**
@@ -20,30 +21,15 @@ class Students extends React.Component{
      }
     render(){
   return (
-    <div>
-        <div>
-        <h1>Students Listing Blank Slate</h1> 
-                <ul  >
-                    <li>
-                        <Link to="/users/1">Home </Link>
-                    </li>
-                    <li>
-                        <Link to="/Student/2">Compus </Link>
-                    </li>
-                    <li>
-                        <Link to="/Student/3">Student </Link>
-                    </li>
-                </ul>
-                <Route path ="/Student/:id" component={Student} /> 
-                    {/* <p> {params.id}</p> */}
+    <div className ='addStudentform  tc'>
+        <div >
+        <h1>All Students</h1> 
+        <p>There is no student registered in database</p>     
         </div>
-
-
-
         <form>
             <input placeholder="name" type="name"/>
             <br></br>
-            <button onClick = {this.onSubmit}>Add Student</button>
+            <button className ='addstudentbtn ma2 bg-light-blue ' onClick = {this.onSubmit}>Add Student</button>
            
         </form>
         
