@@ -1,10 +1,10 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
+
 /**
  * Url param help to get the id  
  */
 
-const User = ({ match }) => <p>{match.params.id}</p>
+
 
 class Campus extends React.Component{
    

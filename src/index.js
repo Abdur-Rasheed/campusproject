@@ -3,19 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Route, Link,NavLink,Switch, BrowserRouter as Router } from 'react-router-dom'
+import { Route,NavLink,Switch, BrowserRouter as Router } from 'react-router-dom'
 import Campus from './components/Campus';
 import Students from './StudentComponent/Students.js';
-import NotFound from './components/NotFound'
+import NotFound from './components/NotFound';
 
-/**React router has 3 component that help implementing routing
- * 1 Route (use for routing process(takes 2 props(path and copenent)))
- * component is the one the user need to see when navigating to that part
- * 2 Link:use to create navigation
- * 3 BrowserRoute (it is a component that has all the logic of displaying
- * the various component that we provid it with)
- * 4 Switch helps to display component ONLY WHEN it matches the path
- */
 
 
 
@@ -33,6 +25,7 @@ const routing = (
           <li className='link3'>
               <NavLink activeClassName ="active" to= "/Students">Students</NavLink>
             </li>
+
         </ul>
       </div>
       <Switch>
