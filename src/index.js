@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Route, Link,NavLink,Switch, BrowserRouter as Router } from 'react-router-dom'
 import Campus from './components/Campus';
-import Students from './components/Students.js';
+import Students from './StudentComponent/Students.js';
 import NotFound from './components/NotFound'
 
 /**React router has 3 component that help implementing routing
