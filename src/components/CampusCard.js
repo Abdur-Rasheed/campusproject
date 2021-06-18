@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CampusInfo(props){
+function CampusCard(props){
     return (
 <div>
     <h2>{props.name}</h2>
@@ -11,4 +11,4 @@ function CampusInfo(props){
     );
 }
 
-export default CampusInfo
+export default CampusCard

@@ -1,6 +1,6 @@
 
 import './App.css';
-import CampusInfo from './components/CampusInfo'
+import CampusCard from './components/CampusCard';
 
 
 
@@ -8,7 +8,7 @@ function App(){
 return(
   <div>
     <h3>Hello World</h3>
-    <CampusInfo/>
+    <CampusCard />
   </div>
 
 );
