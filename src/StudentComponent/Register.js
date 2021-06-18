@@ -23,16 +23,15 @@ import React, { Component } from 'react';
    }
 
 
-   onSubmitSignin =()=>{
+   onSubmit =()=>{
+     alert('Successfull regisetered')
     fetch('http://localhost:3000/register',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
         url: this.state.url,
         name: this.state.name,
-        campusName:this.state.campusName,
-       
-        
+        campusName:this.state.campusName, 
        })
    
     })
@@ -43,13 +42,9 @@ import React, { Component } from 'react';
            this.props.onRoutechange('home')
          }
        })
-
    }
 
-
-
     render(){
-      // const { onRoutechange } = this.props
       return(
         <article className="br3 ba dark-gray b--black-10 mv5 w-150 w-50-m w-25-l mw6 center shadow-5">
           <main className="pa4 black-100">
@@ -68,26 +63,24 @@ import React, { Component } from 'react';
             <div className="mt3">
               <label className="db fw6 lh-copy f6" htmlFor="email-address">Campus Name</label>
               <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-              type="email" 
-              name="email-address" 
-               id="email-address"
+              type="text" 
+              name="campus names" 
+               id="campus id"
                onChange = {this.onCampNameChange}/>
             </div>
             <div className="mv3">
               <label className="db fw6 lh-copy f6" htmlFor="password">Url</label>
               <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-               type="password" 
-               name="password"  
-               id="password"
+               type="text" 
+               name="url"  
+               id="url"
                onChange = {this.onLinkChange}
                />
             </div>
           </fieldset>
           <div className="">
             <input
-            // onClick = {onRoutechange('signin in')}
-               onClick = {this.onSubmitSignin}
-               
+               onClick = {this.onSubmit}
              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib pointer" 
              type="submit" 
              value="Register"/>
