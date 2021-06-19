@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GOT_ALL_STUDENT } from './actionTypes';
+import { GOT_ALL_STUDENT } from './actionType';
 
 const initialState = {
     allStudents: []

@@ -58,6 +58,7 @@ cancel = () => {
 }
 
 RemoveItem =(id)=>{
+    let cardElement = 
  this.setState((index) => ({
         ...this.state,
         todos: index.todos.filter(item => item.id !== id),
@@ -86,18 +87,18 @@ render() {
         return(
         <div className='setInput'>
             <input className='myInputField' 
-                type='text' 
+                type='text'  required
                 value={this.state.newName} 
                 onChange={this.editstudentName}>
             </input>
 
             <input className='myInputField' 
-                type='text' 
+                type='number' required  min ='0.0' max ="4.0" 
                 value={this.state.newGPA} 
                 onChange={this.editGPA}>
             </input>
 
-            <input className='myInputField' type='text' 
+            <input className='myInputField' type='text' required
                 value={this.state.newUrl} 
                 onChange={this.editUrl}>
             </input>

@@ -4,28 +4,53 @@ import './Student.css'
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import Register from './Register';
 import StudentCardList from './StudentCardList'
+import StudentCard from './StudentCard';
+
 
 import { connect } from 'react-redux';
-import { getAllStudents} from './reducers/';
+import { getAllStudents} from '../reducers/DisplayAllStudent';
+
 
 
 
 
 class Students extends React.Component{
-    // constructor(){
-    //     super()
-    //     this.state ={
-    //         users: []
-    //     }
-    // }
-
+    constructor(){
+        super()
+        this.state ={
+            studentList: []
+        }
+    }
+  
     //https://randomuser.me/api/?results=5000
 //https://randomuser.me/api/1.3/
 //${id}
 
-async componentDidMount(){
-    await this.props.getAllStudents();
+//mthd to display all employees from back end
+// const DisplayEmployees = () =>{
+//     //get api from batabase
+//    axios.get('http://localhost:3000/studentInfo').then(response =>{
+//      // console.log(response)
+//      //convert the back end data  by using setstate
+//      this.setStat({studentList:response.data}) //now student have date inside 
     
+//    }
+   
+//    )
+//  }
+
+
+
+async componentDidMount(){
+//     axios.get('http://localhost:3000/studentInfo').then(response =>{
+//      // console.log(response)
+//      //convert the back end data  by using
+//      this.setState({studentList:response.data}) //now student have date inside 
+    
+//    }
+   
+    await this.props.getAllStudents();
+
 }
   
     render(){
