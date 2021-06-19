@@ -2,8 +2,50 @@ addStudentform{
      border-radius: 2px black solid;
 }
 
+body{
+     background-color: rgb(224, 220, 220);
+}
 
-button a{
+button {
     text-decoration: none;
   }
+
+  
       
+  .add-stu-btn{
+       /* display: flex;
+       align-self: flex-end;
+       margin-right: auto; */
+       border-radius: 20px;
+       padding: 10px;
+       color: white;
+       font-size: 20px;
+       background-color: blue;
+       border: 0 solid white;
+       
+
+  }
+
+  .add-stu-btn:hover{
+       background-color: black;
+       color: white;
+       font-size: 20px;
+  }
+
+  
+
+  .st-btn{
+       display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    
+      
+       
+     
+  }
+/* 
+   .st-btn {
+       display: flex;
+       justify-content: right;
+       float: right;
+  } */

@@ -58,10 +58,10 @@ cancel = () => {
 }
 
 RemoveItem =(id)=>{
-    let cardElement = 
+    let cardElement = {} 
  this.setState((index) => ({
         ...this.state,
-        todos: index.todos.filter(item => item.id !== id),
+        cardElement: index.cardElement.filter(item => item.id !== id),
     }))
 
 
@@ -75,8 +75,10 @@ render() {
                 <p>{this.state.studentName}</p>
                 <p>{this.state.GPA}</p>
                 <p>{this.state.Url}</p>
+                
                 <button className='myButton' 
                 onClick={this.editForm}>Edit</button>
+
                 <button onClick={this.deleteForm}></button>
                  <button onClick={this.RemoveItem}>Delete</button>
 

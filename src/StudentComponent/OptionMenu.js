@@ -19,7 +19,7 @@ class OptionMenu extends React.Component{
          response.json()
        }).then(data =>{
          initialStudent = data.results.map(student =>{
-            student;
+           return student;
          });
          console.log(initialStudent);
          this.setState({students:initialStudent});

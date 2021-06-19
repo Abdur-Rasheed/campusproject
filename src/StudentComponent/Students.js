@@ -9,6 +9,7 @@ import StudentCard from './StudentCard';
 
 import { connect } from 'react-redux';
 import { fetchStudents } from '../reducers/action/studentActions';
+import EditFrom from './EditForm';
 // import { getAllStudents} from '../reducers/DisplayAllStudent';
 
 
@@ -54,15 +55,16 @@ class Students extends React.Component{
         allStudents.length ? (
           <div>
             {/* <Link to='./AddStudents'>Add Student</Link> */}
-            <div >
-                <h1>All Students</h1>
-            </div>
-
+            <div className='st-btn ' >
+               <h1 className='tl  ma2 '>All Students</h1>
+            
               <Link to="/Register">
-                 <button className ='add-stu-btn ma2 bg-light-blue'>
+                 <button className ='add-stu-btn ma2 bg-light-blue fr  '>
                      Add Student
                  </button>
               </Link>
+             
+              </div>
 
             {allStudents.map((item, index) => (
                    <StudentCard
@@ -71,7 +73,9 @@ class Students extends React.Component{
                     name={ item.name }
                     gpa={item.gpa}
                     description={ item.description }/>
+                    
             ))}
+            <EditFrom/>
           </div>
         )
         : <p>There is no student registered in database</p>

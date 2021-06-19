@@ -10,8 +10,7 @@ class Campus extends React.Component{
    
     render(){
        
-        // const { urlParams } = match.params.id
-      //  console.log(this.urlParams) //to get the id
+      
     return <div>
                this is campus page
         </div>

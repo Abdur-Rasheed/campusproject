@@ -9,17 +9,17 @@ const initialStudentsState = [
     imageURL: 'http://example.com/profile.png',
   },
   {
-    name: 'Student 1',
+    name: 'Student 2',
     campusName: 'Lehman College',
     imageURL: 'http://example.com/profile.png'
   },
   {
-     name: 'Student 1',
+     name: 'Student 3',
      campusName: 'Lehman College',
      imageURL: 'http://example.com/profile.png'
   },
   {
-     name: 'Student 1',
+     name: 'Student 4',
      campusName: 'Lehman College',
      imageURL: 'http://example.com/profile.png'
   }
