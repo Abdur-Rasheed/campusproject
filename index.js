@@ -1,9 +1,8 @@
 var express = require('express');
-let {Sequelize} = require('sequelize');
 
 
 const Sequelize = require('sequelize');
-const db = require('../config/database');
+//const db = require('crudDB');
 //var app = express();
 
 console.log("setting up the examples");
@@ -42,26 +41,26 @@ var Campus = sequelize.define('Campus', {
         primaryKey: true,
         allowNull: false
     }, 
-    imageUrl: 
+    cImageUrl: 
     {
-    type: Sequelize.STRING,
-    defaultValue: 'https://placekitten.com/g/200/300',
+        type: Sequelize.STRING,
+        defaultValue: 'https://placekitten.com/g/200/300',
     },
     adrs:
     {
-    type: Sequelize.STRING,
-    defaultValue: '250 Bedford Park Blvd W.',
-    allowNull: false
+        type: Sequelize.STRING,
+        defaultValue: '250 Bedford Park Blvd W.',
+        allowNull: false
     },
 
     //xtrmly large TEXT
     desc:
     {
-    type: Sequelize.STRING,
-    defaultValue: 'CUNY—Lehman College is a public institution that was' 
-    +'founded in 1968. It has a total undergraduate enrollment of 13,002,'
-    +'its setting is urban, and the campus size is 37 acres. It utilizes a'
-    +'semester-based academic calendar.',
+        type: Sequelize.STRING,
+        defaultValue: 'CUNY—Lehman College is a public institution that was' 
+        +'founded in 1968. It has a total undergraduate enrollment of 13,002,'
+        +'its setting is urban, and the campus size is 37 acres. It utilizes a'
+        +'semester-based academic calendar.',
     },
    });
 
@@ -73,15 +72,36 @@ var Student = sequelize.define('Student', {
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
+    cName:
+    {
+        type: Sequelize.STRING,
+        foreignKey: true,
+        allowNull: false
+    }, 
+    fName: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    material: Sequelize.STRING,
-    //height as an integer,
-    height: Sequelize.INTEGER,
-    //and brim as a true/false
-    brim: Sequelize.BOOLEAN
+    lName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    //create validation for @ and uniqueness enforced
+    email: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    sImageUrl: 
+    {
+        type: Sequelize.STRING,
+        defaultValue: 'https://placekitten.com/200/300',
+    },
+    //create 0-4.0 double constraint
+    gpa: {
+        type: Sequelize.DOUBLE,
+        allowNull: false
+    },
+    
 });
 
 
@@ -107,11 +127,17 @@ var Student = sequelize.define('Student', {
 /* Command for data insert into a table called Hats.
 */
    Campus.create({
-    
+    cName: 'LEH01',
+
    });/**/
 
    Student.create({
-    
+    stuID: 1234,
+    cName: 'LEH01',
+    fName: 'john',
+    lName: 'doe',
+    email: 'email',
+    gpa: 4.0,
     });/**/
 
 /*
