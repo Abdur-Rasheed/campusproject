@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import { getAllStudents} from './reducers/';
 
 
+
+
 class Students extends React.Component{
     // constructor(){
     //     super()
@@ -23,6 +25,7 @@ class Students extends React.Component{
 
 async componentDidMount(){
     await this.props.getAllStudents();
+    
 }
   
     render(){
@@ -50,13 +53,13 @@ async componentDidMount(){
        </BrowserRouter>  
 
         { this.props.allStudents.students.map((item, index) => (
-           <a >
+         
                <StudentCard 
                 key={ index } 
                 image={ item.imageurl }
                 name={ item.studentname } 
                 gpa={item.gpa}
-                description={ item.description }/> </a> 
+                description={ item.description }/> 
         ))}
     </div>
     )
@@ -67,7 +70,7 @@ async componentDidMount(){
 
 //
 
-// export default Students;
+
 const mapStateToProps = state => {
     return {
         allStudents: state.allStudents
@@ -81,4 +84,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
+// export default Students;
 export default connect(mapStateToProps, mapDispatchToProps)(Students);

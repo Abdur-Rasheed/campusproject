@@ -1,4 +1,5 @@
 import React from 'react'
+import OptionMenu from './OptionMenu'
 
 
 class EditFrom extends React.Component{
@@ -107,6 +108,7 @@ render() {
 
             <button className='myButton' 
             onClick={this.cancel}>Cancel</button>
+            <OptionMenu/>
         </div>    
         );
     }
