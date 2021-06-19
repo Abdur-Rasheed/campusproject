@@ -1,5 +1,7 @@
 import React from 'react'
 import OptionMenu from './OptionMenu'
+// import 'tachyons'
+import './editForm.css'
 
 
 class EditFrom extends React.Component{
@@ -79,7 +81,7 @@ render() {
                 <button className='myButton' 
                 onClick={this.editForm}>Edit</button>
 
-                <button onClick={this.deleteForm}></button>
+                {/* <button onClick={this.deleteForm}></button> */}
                  <button onClick={this.RemoveItem}>Delete</button>
 
             </div>            
@@ -88,31 +90,36 @@ render() {
     else{
         return(
         <div className='setInput'>
-            <input className='myInputField' 
+            <input className='myInputField tr' 
                 type='text'  required
                 value={this.state.newName} 
                 onChange={this.editstudentName}>
+                    {/* Student-name: */}
             </input>
-
-            <input className='myInputField' 
+              {/* <br></br> */}
+            <input className='myInputField tr' 
                 type='number' required  min ='0.0' max ="4.0" 
                 value={this.state.newGPA} 
                 onChange={this.editGPA}>
+                     {/* GPA: */}
             </input>
-
-            <input className='myInputField' type='text' required
+               {/* <b></b>
+               <br></br> */}
+            <input className='myInputField tr' type='text' required
                 value={this.state.newUrl} 
                 onChange={this.editUrl}>
+                    {/* student Url: */}
             </input>
 
-            <br></br>
+            {/*   */}
             <button className='myButton' 
             onClick={this.save}>Save</button>
 
             <button className='myButton' 
             onClick={this.cancel}>Cancel</button>
-            <OptionMenu/>
+            
         </div>    
+        
         );
     }
 }
