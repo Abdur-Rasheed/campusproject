@@ -1,0 +1,112 @@
+
+
+/* .navLinks{
+  display: flex ;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-end;
+  
+  
+  padding: 10px;
+  margin: 20px;
+  font-size: 20px;
+  width: 100%;
+  background-color: aqua;
+} */
+
+.navLinks ul{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+   padding: 10px;
+  margin: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding: 10px;
+  /* background-color: blue; */
+  justify-content: space-between;
+  /* width: 100%; */
+  clear: both;
+  border: solid 1px black;
+ 
+}
+
+
+
+/* .navLinks{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: larger;
+  background: blue;
+  z-index: 10;
+  overflow: hidden;
+  float: right;
+  clear: right; 
+  border: solid 1px black;
+  color: black;
+ 
+ 
+  } */
+
+  #link1{
+   display: inline-block;
+}
+
+#lc-logo{
+   float: left;
+   width:20%;
+   height: 30px;
+   padding: 1px;
+   margin-top: 10px;
+   color: white;
+   /* margin-left: auto; */
+
+}
+.lin2 .link3{
+ float: right;
+ clear: right;
+ color: white;
+}
+
+.link1, .link2,.link3{
+
+ font-size: 30px;
+   /* padding: 1rem; */
+   text-decoration: none;
+   text-align: center;
+   padding: 5px;
+   padding-top: 25px;
+   padding-bottom: 25px;
+   color: rgb(246, 244, 244);
+   clear: right;
+
+}
+
+
+  
+
+
+  nav a:hover{
+   background:#45567d; 
+   padding: 55px;
+   color:#be3144
+   
+  }
+  span{
+    font-size: 3rem;
+  }
+
+  #myimg{
+    display: flex;
+    align-items: center;
+    margin: auto;  
+     width: 150px;
+     border-radius: 50%;
+     text-align: center;
+     border: 1px solid black;
+     clear: both; 
+  }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 
 ////	https://randomuser.me/api/portraits/${gender}/41.jpg`

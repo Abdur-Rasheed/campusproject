@@ -1,1 +1,0 @@
-export const GOT_ALL_STUDENT = 'GOT_ALL_STUDENT';

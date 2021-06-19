@@ -9,39 +9,45 @@ import Students from './StudentComponent/Students.js';
 import NotFound from './components/NotFound';
 import {Provider }from 'react-redux'
 import store from './reducers/store'
-import Register from "./StudentComponent/Register";
 
-const Site = (
+
+
+
+const routing = (
   <Provider store={store}>
-    <Router>
-      <div>
-        <div className ='navLinks'>
-          <ul>
-            <li className='link1' >
+  <Router>
+    
+    <div>
+      <div className ='navLinks'>
+        <ul>
+          <li className='link1' >
               <NavLink exact activeClassName ="active" to= "/" >Home</NavLink>
-            </li>
-            <li className='link2'>
+          </li>
+          <li className='link2'>
               <NavLink  activeClassName ="active" to= "/Campus">Campus</NavLink>
             </li>
-            <li className='link3'>
+          <li className='link3'>
               <NavLink activeClassName ="active" to= "/Students">Students</NavLink>
             </li>
 
-          </ul>
-        </div>
-        <Switch>
-          <Route  exact path ="/" component={App}/>
-          <Route path="/Campus/" component={Campus}/>
-          <Route path="/Students" component={Students}/>
-          <Route path="/Register" component={Register} />
-          <Route component={NotFound}/>
-        </Switch>
+        </ul>
       </div>
-    </Router>
+      <Switch>
+        
+          <Route  exact path ="/" component={App}/>
+          <Route exact path ="/Campus/" component={Campus}/>
+          <Route  exact path ="/Students" component={Students}/>
+          <Route component = {NotFound}/>
+        
+        
+      </Switch> 
+    </div>
+  </Router>
   </Provider>
-);
+)
 
-ReactDOM.render(Site, document.getElementById('root'))
+
+ReactDOM.render(<Provider>routing,</Provider> , document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
