@@ -30,9 +30,11 @@ const routing = (
       </div>
       <Switch>
           <Route  exact path ="/" component={App}/>
-          <Route path ="/Campus/" component={Campus}/>
-          <Route path ="/Students" component={Students}/>
+          <Route exact path ="/Campus/" component={Campus}/>
+          <Route  exact path ="/Students" component={Students}/>
           <Route component = {NotFound}/>
+        
+        
       </Switch> 
     </div>
   </Router>

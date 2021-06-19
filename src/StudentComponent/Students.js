@@ -3,31 +3,43 @@ import 'tachyons'
 import './Student.css'
 import {BrowserRouter, Route, Link} from 'react-router-dom';
 import Register from './Register';
+import StudentCardList from './StudentCardList'
 
+import { connect } from 'react-redux';
+import { getAllStudents} from './reducers/';
 
-/**
- * Url param help to get the id  
- */
-
-//const Student = ({ match }) => <p>{match.params.id}</p>
 
 class Students extends React.Component{
-    constructor(){
-        super()
-        this.state ={}
-    }
+    // constructor(){
+    //     super()
+    //     this.state ={
+    //         users: []
+    //     }
+    // }
 
+    //https://randomuser.me/api/?results=5000
+//https://randomuser.me/api/1.3/
+//${id}
 
-     onSubmit = ()=>{
-         this.props.history.push("/");
-     }
+async componentDidMount(){
+    await this.props.getAllStudents();
+}
+  
     render(){
   return (
-    <div className ='addStudentform  tc'>
+
+    // <div className ='addStudentform  tc'>
+    //      
+
+
+    this.props.allStudents.students !== undefined ? (
+    <div>
+        <index />
+        {/* <Link to='./AddStudents'>Add Student</Link> */}
         <div >
-            <h1>All Students</h1> 
-            <p>There is no student registered in database</p>     
+            <h1>All Students</h1>      
         </div>
+
         <BrowserRouter>
        < Link to="/Register">
            <button className ='add-stu-btn ma2 bg-light-blue'>
@@ -36,9 +48,37 @@ class Students extends React.Component{
         </Link>
        <Route path ="/Register" component={Register} /> 
        </BrowserRouter>  
+
+        { this.props.allStudents.students.map((item, index) => (
+           <a >
+               <StudentCard 
+                key={ index } 
+                image={ item.imageurl }
+                name={ item.studentname } 
+                gpa={item.gpa}
+                description={ item.description }/> </a> 
+        ))}
     </div>
-    
-)
+    )
+    : <p>There is no student registered in database</p>  
+  )}
 }
+
+
+//
+
+// export default Students;
+const mapStateToProps = state => {
+    return {
+        allStudents: state.allStudents
+    }
 }
-export default Students;
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getAllStudents: () => dispatch(getAllStudents())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Students);

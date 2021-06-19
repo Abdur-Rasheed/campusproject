@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 ////	https://randomuser.me/api/portraits/${gender}/41.jpg`
 
-const StudentCard = ({ image,name, campusName, id }) => {
+const StudentCard = ({id,name, campusName}) => {
     return (
       <div className='tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5'>
         <img alt='robots' src={`https://robohash.org/${id}?200x200`} />
@@ -15,3 +16,4 @@ const StudentCard = ({ image,name, campusName, id }) => {
   }
 
 export default StudentCard;
+

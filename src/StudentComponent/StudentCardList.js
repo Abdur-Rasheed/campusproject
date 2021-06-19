@@ -1,21 +1,22 @@
 import React from 'react';
-import StudentCard from './Card';
+import StudentCard from './StudentCard';
 
-const StudentCardList = ({ student }) => {
+const StudentCardList = (props) => {
+  
+   
+    let card =  props.users.map((user, i) => {
+        return (
+          <StudentCard
+            key={i}
+            id={props[i].id}
+            name={props[i].name}
+            campusName={props[i].campusName}
+            />
+        );
+      })
   return (
     <div>
-      {
-        robots.map((user, i) => {
-          return (
-            <StudentCard
-              key={i}
-              id={student[i].id}
-              name={student[i].name}
-              email={student[i].campusName}
-              />
-          );
-        })
-      }
+      {card}
     </div>
   );
 }
