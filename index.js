@@ -1,21 +1,16 @@
 var express = require('express');
-
-
 const Sequelize = require('sequelize');
 //const db = require('crudDB');
 //var app = express();
-
 console.log("setting up the examples");
-
 /* In this example, we are discussing sequlaize.
 First, we need to establish a connection to the database.
 If we want to create a connection to a database, we must create
 an instance of sequalize. Let us also not forget to require sequalize 
 module for our example.
 */
-
 // Instance of Sequalize
-var sequelize = new Sequelize('postgres://postgres:Password@localhost/postgres');
+let sequelize = new Sequelize('postgres://postgres:Password@localhost/postgres');
 
 //Let's test the connection that we have created in the above line
 
@@ -25,13 +20,12 @@ try{
 }catch(er){
     console.log("Some error", er);
 }
-
-
 /*  A Model in an abstraction that represents a table in your database.
 */
-
 /*The following create a table if it does not exist.
 */
+
+/*
 
 var Campus = sequelize.define('Campus', {
     //create name and material as strings,
@@ -62,7 +56,7 @@ var Campus = sequelize.define('Campus', {
         +'its setting is urban, and the campus size is 37 acres. It utilizes a'
         +'semester-based academic calendar.',
     },
-   });
+   });*/
 
 var Student = sequelize.define('Student', {
     //create name and material as strings,
@@ -70,14 +64,8 @@ var Student = sequelize.define('Student', {
     {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
     },
-    cName:
-    {
-        type: Sequelize.STRING,
-        foreignKey: true,
-        allowNull: false
-    }, 
+    
     fName: {
         type: Sequelize.STRING,
         allowNull: false
@@ -87,7 +75,7 @@ var Student = sequelize.define('Student', {
         allowNull: false
     },
     //create validation for @ and uniqueness enforced
-    email: {
+    email: { 
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -99,12 +87,33 @@ var Student = sequelize.define('Student', {
     //create 0-4.0 double constraint
     gpa: {
         type: Sequelize.DOUBLE,
-        allowNull: false
-    },
-    
+        allowNull: false,
+    },  
 });
 
+Student
+//ensure the table exists,
+.sync()
+.then(function(){
+//`Hat` is now ready to be used.
 
+//console.log("The table is ready to be used");
+})
+
+Student.create
+ ({
+ stuID: '1234',
+ fName: 'john',
+ lName: 'doe',
+ email: 'email',
+ sImageUrl: '',
+ gpa: 4.0,
+ });
+ 
+ console.log(Student === sequelize.models.Student);
+/**/
+
+/*
    Campus
    //ensure the table exists,
    .sync()
@@ -113,33 +122,30 @@ var Student = sequelize.define('Student', {
 
    //console.log("The table is ready to be used");
    })
-   Student
-   //ensure the table exists,
-   .sync()
-   .then(function(){
-   //`Hat` is now ready to be used.
 
-   //console.log("The table is ready to be used");
-   })
+  
+// Command for data insert into a table called Hats.
 
-
-
-/* Command for data insert into a table called Hats.
-*/
-   Campus.create({
+   Campus.create
+    ({
     cName: 'LEH01',
+    });/*
+    Campus.create
+    ({
+    cName: 'BAR01',
+    });/*
+    Campus.create
+    ({
+    cName: 'CSI01',
+    });/*
+    Campus.create
+    ({
+    cName: 'QNS01',
+    });/*
+    console.log(Campus  === sequelize.models.Campus);
 
-   });/**/
-
-   Student.create({
-    stuID: 1234,
-    cName: 'LEH01',
-    fName: 'john',
-    lName: 'doe',
-    email: 'email',
-    gpa: 4.0,
-    });/**/
-
+/**/
+   
 /*
    Hat.findAll().then(function(rows) {
     for(var i = 0; i < rows.length; i++) {
@@ -160,11 +166,9 @@ var Student = sequelize.define('Student', {
    });
 /**/
 
-console.log(Campus === sequelize.models.Campus);
-console.log(Student === sequelize.models.Student);
 
 /* To close a connection. we have to use: connectionName.close();
-*/
+/**/
 //sequelize.close();
 
 /*let port = 3000;
