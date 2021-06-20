@@ -3,13 +3,43 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Route,NavLink,Switch, BrowserRouter as Router } from 'react-router-dom'
+import Campus from './components/Campus';
+//import Students from './components/Students.js';
+import NotFound from './components/NotFound';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+
+
+const routing = (
+  <Router>
+    <div>
+      <div className ='navLinks'>
+        <ul>
+          <li className='link1' >
+              <NavLink exact activeClassName ="active" to= "/" >Home</NavLink>
+          </li>
+          <li className='link2'>
+              <NavLink  activeClassName ="active" to= "/Campus">Campus</NavLink>
+            </li>
+          <li className='link3'>
+              <NavLink activeClassName ="active" to= "/Students">Students</NavLink>
+            </li>
+
+        </ul>
+      </div>
+      <Switch>
+          <Route  exact path ="/" component={App}/>
+          <Route path ="/Campus/" component={Campus}/>
+          
+          <Route component = {NotFound}/>
+      </Switch> 
+    </div>
+  </Router>
+)
+
+
+ReactDOM.render(routing, document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,22 +1,22 @@
 import React from 'react';
 import CampusCard from './CampusCard';
 
-const CampusCardList = ({ campus }) => {
+const CampusCardList = (props) => {
+  
+   
+    let card =  props.users.map((user, i) => {
+        return (
+          <CampusCard
+            key={i}
+            id={props[i].id}
+            name={props[i].name}
+            campusName={props[i].campusName}
+            />
+        );
+      })
   return (
     <div>
-      {
-        robots.map((user, i) => {
-          return (
-            <CampusCard
-              key={i}
-              id={campus[i].id}
-              name={campus[i].name}
-              address={campus[i].address}
-
-              />
-          );
-        })
-      }
+      {card}
     </div>
   );
 }

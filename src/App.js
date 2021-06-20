@@ -1,16 +1,13 @@
 
 import './App.css';
-import CampusCard from './components/CampusCard';
+//import 'tachyons'
 
-
-
-function App(){
-return(
-  <div>
-    <h3>Hello World</h3>
-    <CampusCard />
-  </div>
-
-);
+function App() {
+  return (
+    <div className="App tc">
+      Welcome to Campus site
+    </div>
+  );
 }
+
 export default App;
