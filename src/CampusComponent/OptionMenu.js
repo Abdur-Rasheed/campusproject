@@ -1,28 +1,28 @@
 import React from 'react'
-import StudentOption from './StudentOption'
+import CampusOption from './CampusOption'
 
 
 class OptionMenu extends React.Component{
     constructor() {
         super();
         this.state = {
-           students: [],
+           campuses: [],
         };
     }
     
     componentDidMount(){
-      let initialStudent = []
+      let initialCampus = []
 
       //api for backend database
-       fetch('https://localhost/api/students/')
+       fetch('https://localhost/api/campuses/')
        .then(response =>{
          response.json()
        }).then(data =>{
-         initialStudent = data.results.map(student =>{
-            student;
+         initialCampus = data.results.map(campus =>{
+           return campus;
          });
-         console.log(initialStudent);
-         this.setState({students:initialStudent});
+         console.log(initialCampus);
+         this.setState({campuses:initialCampus});
        });
     
     }
@@ -30,7 +30,7 @@ class OptionMenu extends React.Component{
     render(){
       return (
         <div className="App">
-           <StudentOption state={this.state}/>
+           <CampusOption state={this.state}/>
         </div>
       );
     

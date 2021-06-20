@@ -1,2 +1,0 @@
-
-export const GOT_ALL_CAMPUSES = 'GOT_ALL_CAMPUSES';

@@ -7,7 +7,7 @@ import CampusCard from "./CampusCard"
 import CampusCardList from "./CampusCardList"
 
 import { connect } from "react-redux";
-import { getAllCampuses } from '../reducers/action/campusActions';
+import { fetchCampuses } from '../reducers/action/campusActions';
 import EditForm from './EditForm'
 
 class Campus extends React.Component {
@@ -60,7 +60,7 @@ constructor(){
                   description={ item.description }/>
                   
           ))}
-          <EditFrom/>
+          <EditForm/>
         </div>
       )
       : <p>There is no campus registered in the database</p>
@@ -79,7 +79,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getAllCampuses: () => dispatch(getAllCampuses()),
+    getAllCampuses: () => dispatch(fetchCampuses()),
   };
 };
 

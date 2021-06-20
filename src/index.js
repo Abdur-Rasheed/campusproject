@@ -4,44 +4,43 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Route,NavLink,Switch, BrowserRouter as Router } from 'react-router-dom'
-import Campus from './components/Campus';
-//import Students from './components/Students.js';
-import NotFound from './components/NotFound';
+import Campus from './CampusComponent/Campus';
+import Student from './StudentComponent/Student.js';
+import NotFound from './StudentComponent/NotFound';
+import {Provider }from 'react-redux'
+import store from './reducers/store'
+import Register from "./CampusComponent/Register";
 
-
-
-
-const routing = (
-  <Router>
-    <div>
-      <div className ='navLinks'>
-        <ul>
-          <li className='link1' >
+const Site = (
+  <Provider store={store}>
+    <Router>
+      <div>
+        <div className ='navLinks'>
+          <ul>
+            <li className='link1' >
               <NavLink exact activeClassName ="active" to= "/" >Home</NavLink>
-          </li>
-          <li className='link2'>
+            </li>
+            <li className='link2'>
               <NavLink  activeClassName ="active" to= "/Campus">Campus</NavLink>
             </li>
-          <li className='link3'>
-              <NavLink activeClassName ="active" to= "/Students">Students</NavLink>
+            <li className='link3'>
+              <NavLink activeClassName ="active" to= "/Student">Students</NavLink>
             </li>
 
-        </ul>
-      </div>
-      <Switch>
+          </ul>
+        </div>
+        <Switch>
           <Route  exact path ="/" component={App}/>
-          <Route path ="/Campus/" component={Campus}/>
-          
-          <Route component = {NotFound}/>
-      </Switch> 
-    </div>
-  </Router>
-)
+          <Route path="/Campus/" component={Campus}/>
+          <Route path="/Student" component={Student}/>
+          <Route path="/Register" component={Register} />
+          <Route component={NotFound}/>
+        </Switch>
+      </div>
+    </Router>
+  </Provider>
+);
 
+ReactDOM.render(Site, document.getElementById('root'))
 
-ReactDOM.render(routing, document.getElementById('root'))
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

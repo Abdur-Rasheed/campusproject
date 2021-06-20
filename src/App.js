@@ -1,6 +1,6 @@
 
 import './App.css';
-//import 'tachyons'
+import 'tachyons'
 
 function App() {
   return (
