@@ -7,7 +7,7 @@ const HomeComponent =()=>{
       <div className="container text-center ">
         <h3 className="pt">Welcome to CampusViewer!</h3> 
         <p>On this web site, you can view , add, or 
-            revemove campus  or student's  information </p>
+            revemove campus  or student's  informations </p>
     </div>
     </div>
     )
