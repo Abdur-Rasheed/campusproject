@@ -1,14 +1,14 @@
 import React from "react";
 import "tachyons";
 import "./Campus.css";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import CampusCard from "./CampusCard"
 
 
 import { connect } from "react-redux";
 import { fetchCampuses } from '../campusReducers/action/CampusAction';
-import EditCampus from './EditCampus'
+
 
 class Campus extends React.Component {
  
@@ -33,13 +33,12 @@ constructor(){
           {/* <Link to='./AddCampuses'>Add Campus/Link> */}
           <div className='cm-btn ' >
              <h1 className='tl  ma2 '>All Campuses</h1>
-          
-            <Link to="/Register">
-               <button className ='add-camp-btn ma2 bg-light-blue fr  '>
+
+            <Link to="/AddCampus">
+               <button className ='add-camp-btn ma2 bg-light-blue fr'>
                    Add Campus
                </button>
             </Link>
-           
             </div>
 
           {allCampuses.map((item, index) => (
@@ -51,7 +50,6 @@ constructor(){
                   description={ item.description }/>
                   
           ))}
-          <EditCampus/>
         </div>
       )
       : <p>There is no campus registered in the database</p>
@@ -71,5 +69,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-// export default Students;
 export default connect(mapStateToProps, mapDispatchToProps)(Campus);

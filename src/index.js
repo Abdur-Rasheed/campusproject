@@ -11,6 +11,10 @@ import {Provider }from 'react-redux'
 import store from './reducers/store'
 import Register from "./StudentComponent/Register";
 import EditFrom from './StudentComponent/EditForm';
+// import AddCampus from './CampusComponents/AddCampus';
+
+
+
 
 
 const Site = (
@@ -34,9 +38,10 @@ const Site = (
         <Switch>
           {/* <Route exact path="/" component={HomeComponent} /> */}
           <Route  exact path ="/" component={App}/>
-          <Route path="/Campus/" component={Campus}/>
+          <Route path="/Campus" component={Campus}/>
           <Route path="/Students" component={Students}/>
           <Route path="/Register" component={Register} />
+          {/* <Route path="/AddCampus" component={AddCampus}/> */}
           <Route path="/EditForm/:id" component={EditFrom} />
           <Route component={NotFound}/>
         </Switch>

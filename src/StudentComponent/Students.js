@@ -58,11 +58,7 @@ class Students extends React.Component{
               </Link>
              
               </div>
-              {/* key={ index }
-                    image={ item.imageURL }
-                    name={ item.name }
-                    gpa={item.gpa}
-                    description={ item.description } */}
+             
              <div className ='display ma2'>
              {
              allStudents.map((item, index) => (
@@ -72,7 +68,6 @@ class Students extends React.Component{
                    
             ))
             }
-
              </div>
             
            

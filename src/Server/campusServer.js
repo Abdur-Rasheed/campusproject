@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-const { Campus, Student } = require("./Sever");
+const { Campus, Student } = require("./Server");
 
 
 // /api/campuses retrieve data from database
