@@ -5,7 +5,7 @@ const HomeComponent =()=>{
       <div className = 'title' > Campus and Student Site Viewer</div>
 
       <div className="container text-center ">
-        <h3 className="pt">Welcome to CampusViewer!</h3> 
+        <h3 className="pt">Welcome to Campus_Student Viewer!</h3> 
         <p>On this web site, you can view , add, or 
             revemove campus  or student's  informations </p>
     </div>
