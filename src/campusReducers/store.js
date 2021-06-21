@@ -6,7 +6,6 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { configureStore } from "@reduxjs/toolkit";
 
 
-
 const logger = createLogger({ collapsed: true });
 
 const store = configureStore({

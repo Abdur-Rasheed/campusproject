@@ -2,19 +2,12 @@ import React from 'react'
 import 'tachyons'
 import './Student.css'
 import {BrowserRouter, Route, Link} from 'react-router-dom';
-import Register from './Register';
-import StudentCardList from './StudentCardList'
+
 import StudentCard from './StudentCard';
 
 
 import { connect } from 'react-redux';
 import { fetchStudents } from '../reducers/action/studentActions';
-import EditFrom from './EditForm';
-// import { getAllStudents} from '../reducers/DisplayAllStudent';
-
-
-
-
 
 class Students extends React.Component{
     constructor(){
@@ -53,46 +46,48 @@ class Students extends React.Component{
 
       return (
         allStudents.length ? (
-          <div>
+          <div >
             {/* <Link to='./AddStudents'>Add Student</Link> */}
             <div className='st-btn ' >
                <h1 className='tl  ma2 '>All Students</h1>
             
               <Link to="/Register">
-                 <button className ='add-stu-btn ma2 bg-light-blue fr  '>
+                 <button className ='add-stu-btn ma2 bg-light-blue fr'>
                      Add Student
                  </button>
               </Link>
              
               </div>
-
-            {allStudents.map((item, index) => (
-                   <StudentCard
-                    key={ index }
+              {/* key={ index }
                     image={ item.imageURL }
                     name={ item.name }
                     gpa={item.gpa}
-                    description={ item.description }/>
-                    
-            ))}
-            <EditFrom/>
+                    description={ item.description } */}
+             <div className ='display ma2'>
+             {
+             allStudents.map((item, index) => (
+             <StudentCard id={index}
+                studentName={item.studentName} 
+                campusName={item.campusName}/>
+                   
+            ))
+            }
+
+             </div>
+            
+           
           </div>
         )
-        : <p>There is no student registered in database</p>
+        : <p className='tc f1'>There is no student registered in database</p>
       )
   }
 }
-
-
-//
-
 
 const mapStateToProps = state => {
     return {
         allStudents: state.students
     }
 }
-
 
 const mapDispatchToProps = dispatch => {
     return {

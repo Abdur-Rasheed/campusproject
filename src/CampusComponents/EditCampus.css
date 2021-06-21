@@ -1,0 +1,15 @@
+.setInput{
+
+    display: grid;
+    float: right;
+    width: 50%;
+    margin: 0;
+    justify-content: center;
+    clear: both;
+  }
+  .myInputField{
+    display: flex;
+    justify-content: left;
+    margin: 5px;
+    padding: 5px;
+  }

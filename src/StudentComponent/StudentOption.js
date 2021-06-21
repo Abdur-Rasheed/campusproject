@@ -8,7 +8,6 @@ class StudentOption extends React.Component{
     render(){
         
             let students = this.props.allStudents;
-            console.log('-------',students)
             let OptionStudent  = students.map(student=>{
                 return <option key={student.name}>{student.name}</option>
             })

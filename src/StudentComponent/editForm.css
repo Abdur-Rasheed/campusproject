@@ -4,15 +4,34 @@
 .setInput{
 
     display: grid;
-    float: right;
-    width: 50%;
+    /* float: right; */
+    width: 100%;
     margin: 0;
     justify-content: center;
     clear: both;
 }
-.myInputField{
+.myinputfield{
     display: flex;
     justify-content: left;
     margin: 5px;
     padding: 5px;
+    clear: both;
+}
+
+button .mybutton{
+    width: 30px;
+}
+
+.myinputfield:valid{
+    border-color: black;
+} 
+
+ .myinputfield:invalid{
+    border-color: red;
+}
+
+.save{
+    border-radius: 10px;
+    background-color: skyblue;
+    
 }

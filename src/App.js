@@ -1,11 +1,12 @@
 
 import './App.css';
 import 'tachyons'
+import HomeComponent from './HomeComponent';
 
 function App() {
   return (
-    <div className="App tc">
-      Welcome to Campus site
+    <div>
+      <HomeComponent/>
     </div>
   );
 }

@@ -22,6 +22,7 @@ button {
        font-size: 20px;
        background-color: blue;
        border: 0 solid white;
+       clear: both;
        
 
   }
@@ -30,6 +31,7 @@ button {
        background-color: black;
        color: white;
        font-size: 20px;
+       clear: both;
   }
 
   
@@ -38,6 +40,7 @@ button {
        display: flex;
       flex-direction: row;
       justify-content: space-around;
+      clear: both;
     
       
        
@@ -49,3 +52,9 @@ button {
        justify-content: right;
        float: right;
   } */
+
+  .display{
+       display: flex;
+       
+       margin: 10px;
+  }

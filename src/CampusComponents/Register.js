@@ -5,27 +5,22 @@ import React, { Component } from 'react';
     constructor(props){
       super(props);
       this.state = {
-        studentFirstName:'',
-        studentLastName:'',
+        name:'',
         campusName: '',
-        studentUrl: ''
+        url: ''
       }
     }
 
    onNameChange =(event) =>{
-     this.setState({studentFirstName:event.target.value})
+     this.setState({name:event.target.value})
    }
-
-   onNameChange =(event) =>{
-    this.setState({studentLasttName:event.target.value})
-  }
 
    onCampNameChange = (event) =>{
      this.setState({campusName:event.target.value})
    }
 
    onLinkChange =(event) =>{
-     this.setState({studentUrl:event.target.value})
+     this.setState({url:event.target.value})
    }
 
 
@@ -35,11 +30,9 @@ import React, { Component } from 'react';
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
-
-        studentFirsttName: this.state.studentFirsttName,
-        studentLasttName: this.state.studentLastName,
+        url: this.state.url,
+        name: this.state.name,
         campusName:this.state.campusName, 
-        studentUrl: this.state.studentUrl,
        })
    
     })
@@ -57,24 +50,10 @@ import React, { Component } from 'react';
         <article className="br3 ba dark-gray b--black-10 mv5 w-150 w-50-m w-25-l mw6 center shadow-5">
           <main className="pa4 black-100">
         <div >
-          <fieldset id="sign_up" 
-          className="ba b--transparent ph0 mh0">
-            <legend className="f1 fw6 ph0 mh0">
-              Student Name</legend>
+          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+            <legend className="f1 fw6 ph0 mh0">Campus Name</legend>
             <div className="mt3">
-
-              <label className="db fw6 lh-copy f6" 
-              htmlFor="Name"> First Name</label>
-              <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
-              type="text" 
-              name="Name" 
-               id="Name"
-               onChange = {this.onNameChange}/>
-            </div>
-
-            <div className="mt3">
-              <label className="db fw6 lh-copy f6"
-               htmlFor="Name"> Last Name</label>
+              <label className="db fw6 lh-copy f6" htmlFor="Name">Name</label>
               <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
               type="text" 
               name="Name" 
@@ -91,7 +70,7 @@ import React, { Component } from 'react';
                onChange = {this.onCampNameChange}/>
             </div>
             <div className="mv3">
-              <label className="db fw6 lh-copy f6" htmlFor="password"> Student Url</label>
+              <label className="db fw6 lh-copy f6" htmlFor="password">Url</label>
               <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                type="text" 
                name="url"  
